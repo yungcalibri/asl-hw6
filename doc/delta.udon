@@ -1,0 +1,17 @@
+;>
+- Delta, a simple Gall agent
+
+Delta is a sipmle Gall agent built as an exercise for App School Live. The agent tracks a single piece of state--a stack of atoms, `(list @)`--and has `%push` and `%pop` actions to manipulate it.
+
+```
+~zod:dojo> :delta &delta-action [%push ~zod 2]
+~zod:dojo> :delta &delta-action [%push ~zod 4]
+~zod:dojo> :delta &delta-action [%push ~zod 8]
+~zod:dojo> :delta +dbug
+>   [%0 values=~[8 4 2]]
+~zod:dojo> :delta &delta-action [%pop ~zod]
+~zod:dojo> :delta +dbug
+>   [%0 values=~[4 2]]
+```
+
+The state of the stack can be scried at `/x/values`, or subscribed to at `/values`.
